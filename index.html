@@ -1,541 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>UnHub</title>
+    <title>UniHub</title>
+
     <link rel="stylesheet" href="style.css">
-</heard>
-    * {
-            box-sizing: border-box;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        body {
-            background: #f4f7fb;
-            color: #172033;
-            min-height: 100vh;
-        }
-
-        /* HEADER */
-
-        header {
-            background: linear-gradient(135deg, #172554, #2563eb);
-            color: white;
-            padding: 25px 20px 30px;
-            border-radius: 0 0 28px 28px;
-        }
-
-        .top-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 27px;
-            font-weight: 800;
-        }
-
-        .header-icons {
-            display: flex;
-            gap: 10px;
-        }
-
-        .icon-btn {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            border: none;
-            background: rgba(255,255,255,0.18);
-            color: white;
-            font-size: 19px;
-            cursor: pointer;
-        }
-
-        .welcome {
-            margin-top: 28px;
-        }
-
-        .welcome small {
-            opacity: 0.8;
-        }
-
-        .welcome h1 {
-            margin-top: 6px;
-            font-size: 29px;
-        }
-
-        .welcome p {
-            margin-top: 8px;
-            opacity: 0.85;
-        }
-
-        /* SEARCH */
-
-        .search-container {
-            padding: 0 20px;
-            margin-top: -25px;
-        }
-
-        .search {
-            background: white;
-            border-radius: 16px;
-            padding: 16px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-        }
-
-        .search span {
-            font-size: 20px;
-        }
-
-        .search input {
-            border: none;
-            outline: none;
-            width: 100%;
-            font-size: 15px;
-        }
-
-        /* CONTENT */
-
-        main {
-            padding: 25px 20px 100px;
-        }
-
-        .section-title {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .section-title h2 {
-            font-size: 20px;
-        }
-
-        .section-title a {
-            color: #2563eb;
-            font-size: 13px;
-            text-decoration: none;
-        }
-
-        /* MAIN WIDGETS */
-
-        .widgets {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .widget {
-            position: relative;
-            min-height: 170px;
-            padding: 20px;
-            border-radius: 22px;
-            color: white;
-            cursor: pointer;
-            overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .widget:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.15);
-        }
-
-        .widget-icon {
-            width: 48px;
-            height: 48px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: rgba(255,255,255,0.2);
-            border-radius: 15px;
-            font-size: 25px;
-            margin-bottom: 25px;
-        }
-
-        .widget h3 {
-            font-size: 19px;
-        }
-
-        .widget p {
-            margin-top: 6px;
-            font-size: 12px;
-            opacity: 0.85;
-            line-height: 1.4;
-        }
-
-        .home {
-            background: linear-gradient(145deg, #2563eb, #1d4ed8);
-        }
-
-        .sports {
-            background: linear-gradient(145deg, #059669, #047857);
-        }
-
-        .cafeteria {
-            background: linear-gradient(145deg, #f97316, #ea580c);
-            grid-column: span 2;
-            min-height: 145px;
-        }
-
-        /* Decorative circles */
-
-        .widget::after {
-            content: "";
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: rgba(255,255,255,0.08);
-            right: -30px;
-            bottom: -30px;
-        }
-
-        /* QUICK ACTIONS */
-
-        .quick-actions {
-            display: flex;
-            gap: 12px;
-            overflow-x: auto;
-            padding-bottom: 5px;
-        }
-
-        .quick-actions::-webkit-scrollbar {
-            display: none;
-        }
-
-        .quick {
-            min-width: 105px;
-            background: white;
-            padding: 15px;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            cursor: pointer;
-        }
-
-        .quick-icon {
-            font-size: 24px;
-            margin-bottom: 8px;
-        }
-
-        .quick p {
-            font-size: 12px;
-            color: #667085;
-        }
-
-        /* NOTICE */
-
-        .notice {
-            background: white;
-            padding: 18px;
-            border-radius: 18px;
-            display: flex;
-            gap: 14px;
-            align-items: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .notice-icon {
-            width: 45px;
-            height: 45px;
-            background: #eff6ff;
-            color: #2563eb;
-            border-radius: 13px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 21px;
-        }
-
-        .notice h4 {
-            font-size: 14px;
-            margin-bottom: 5px;
-        }
-
-        .notice p {
-            color: #667085;
-            font-size: 12px;
-        }
-
-        /* BOTTOM NAVIGATION */
-
-        .bottom-nav {
-            position: fixed;
-            bottom: 15px;
-            left: 15px;
-            right: 15px;
-            height: 70px;
-            background: rgba(255,255,255,0.96);
-            border-radius: 22px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.13);
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            z-index: 100;
-        }
-
-        .nav-item {
-            text-align: center;
-            color: #98a2b3;
-            font-size: 11px;
-            cursor: pointer;
-            padding: 8px 18px;
-            border-radius: 15px;
-        }
-
-        .nav-item span {
-            display: block;
-            font-size: 22px;
-            margin-bottom: 4px;
-        }
-
-        .nav-item.active {
-            background: #eff6ff;
-            color: #2563eb;
-            font-weight: bold;
-        }
-
-        /* MOBILE */
-
-        @media (max-width: 400px) {
-            .widgets {
-                grid-template-columns: 1fr;
-            }
-
-            .cafeteria {
-                grid-column: span 1;
-            }
-        }
-    </style>
 </head>
 
 <body>
 
-    <!-- HEADER -->
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">UniHub</div>
 
-    <header>
-
-        <div class="top-bar">
-
-            <div class="logo">
-                UnHub
-            </div>
-
-            <div class="header-icons">
-                <button class="icon-btn">🔔</button>
-                <button class="icon-btn">👤</button>
-            </div>
-
+        <div class="profile">
+            U
         </div>
-
-        <div class="welcome">
-            <small>Your University Hub</small>
-            <h1>Welcome to UnHub 👋</h1>
-            <p>Everything you need, all in one place.</p>
-        </div>
-
     </header>
 
 
-    <!-- SEARCH -->
+    <!-- Main Content -->
+    <main class="container">
 
-    <div class="search-container">
+        <!-- Welcome -->
+        <section class="welcome">
+            <h1>Welcome to UniHub 👋</h1>
+            <p>Your campus, connected.</p>
+        </section>
 
+
+        <!-- Search -->
         <div class="search">
-            <span>🔍</span>
             <input
                 type="text"
-                placeholder="Search UnHub..."
-                onkeyup="searchUnHub(this.value)"
+                placeholder="🔍 Search UniHub..."
             >
         </div>
 
-    </div>
+
+        <!-- Announcement -->
+        <section class="announcement">
+
+            <small>📢 CAMPUS UPDATE</small>
+
+            <h2>Stay connected with your university.</h2>
+
+            <p>
+                Get campus information, sports updates,
+                cafeteria menus and upcoming events in one place.
+            </p>
+
+        </section>
 
 
-    <!-- MAIN CONTENT -->
+        <!-- Quick Access -->
+        <h2 class="section-title">Quick Access</h2>
 
-    <main>
+        <section class="cards">
 
-        <!-- MAIN SERVICES -->
+            <a href="sports.html" class="card">
 
-        <div class="section-title">
-            <h2>Explore UnHub</h2>
-            <a href="#">See all</a>
-        </div>
-
-
-        <div class="widgets">
-
-            <!-- HOME -->
-
-            <div class="widget home" onclick="openPage('Home')">
-
-                <div class="widget-icon">
-                    🏠
-                </div>
-
-                <h3>Home</h3>
-
-                <p>
-                    University updates, announcements
-                    and important information.
-                </p>
-
-            </div>
-
-
-            <!-- SPORTS -->
-
-            <div class="widget sports" onclick="openPage('Sports')">
-
-                <div class="widget-icon">
-                    ⚽
-                </div>
+                <div class="icon">⚽</div>
 
                 <h3>Sports</h3>
 
                 <p>
-                    Follow teams, fixtures,
-                    matches and results.
+                    Fixtures, results and sports news.
                 </p>
 
-            </div>
+            </a>
 
 
-            <!-- CAFETERIA -->
+            <a href="cafeteria.html" class="card">
 
-            <div class="widget cafeteria" onclick="openPage('Cafeteria')">
-
-                <div class="widget-icon">
-                    🍽️
-                </div>
+                <div class="icon">🍽️</div>
 
                 <h3>Cafeteria</h3>
 
                 <p>
-                    Check today's meals, menus,
-                    prices and cafeteria updates.
+                    Today's menu and food prices.
                 </p>
 
+            </a>
+
+        </section>
+
+
+        <!-- Upcoming Events -->
+        <h2 class="section-title">Upcoming Events</h2>
+
+        <div class="event">
+
+            <div class="event-date">
+                📅 18 September
             </div>
+
+            <h3>University Sports Day</h3>
 
         </div>
 
 
-        <!-- QUICK ACCESS -->
+        <div class="event">
 
-        <div class="section-title" style="margin-top:30px;">
-            <h2>Quick Access</h2>
-        </div>
-
-        <div class="quick-actions">
-
-            <div class="quick" onclick="openPage('Timetable')">
-                <div class="quick-icon">📅</div>
-                <p>Timetable</p>
+            <div class="event-date">
+                📅 22 September
             </div>
 
-            <div class="quick" onclick="openPage('Announcements')">
-                <div class="quick-icon">📢</div>
-                <p>Announcements</p>
-            </div>
-
-            <div class="quick" onclick="openPage('Events')">
-                <div class="quick-icon">🎫</div>
-                <p>Events</p>
-            </div>
-
-            <div class="quick" onclick="openPage('Library')">
-                <div class="quick-icon">📚</div>
-                <p>Library</p>
-            </div>
-
-        </div>
-
-
-        <!-- NOTICE -->
-
-        <div class="section-title" style="margin-top:30px;">
-            <h2>Latest Update</h2>
-            <a href="#">View all</a>
-        </div>
-
-        <div class="notice">
-
-            <div class="notice-icon">
-                📢
-            </div>
-
-            <div>
-                <h4>Welcome to UnHub</h4>
-                <p>
-                    Your university information is now
-                    easier to access.
-                </p>
-            </div>
+            <h3>Student Orientation</h3>
 
         </div>
 
     </main>
 
 
-    <!-- BOTTOM NAVIGATION -->
-
+    <!-- Bottom Navigation -->
     <nav class="bottom-nav">
 
-        <div class="nav-item active"
-             onclick="openPage('Home')">
+        <a href="index.html" class="nav-item active">
             <span>🏠</span>
             Home
-        </div>
+        </a>
 
-        <div class="nav-item"
-             onclick="openPage('Sports')">
+        <a href="sports.html" class="nav-item">
             <span>⚽</span>
             Sports
-        </div>
+        </a>
 
-        <div class="nav-item"
-             onclick="openPage('Cafeteria')">
+        <a href="cafeteria.html" class="nav-item">
             <span>🍽️</span>
             Cafeteria
-        </div>
-
-        <div class="nav-item"
-             onclick="openPage('Profile')">
-            <span>👤</span>
-            Profile
-        </div>
+        </a>
 
     </nav>
 
-
-    <!-- JAVASCRIPT -->
-
-    <script>
-
-        function openPage(page) {
-            alert("Opening " + page);
-        }
-
-
-        function searchUnHub(value) {
-
-            if (value.trim() !== "") {
-                console.log("Searching UnHub for: " + value);
-            }
-
-        }
-
-    </script>
-
 </body>
+
 </html>
